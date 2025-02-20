@@ -20,6 +20,7 @@ int main() {
     int pontosTuristicos2;
     char codigoConcatenado2[5]; //codigo formatado para ser exibido ao usuário
     
+    printf("*** INPUT DOS DADOS ***\n\n");
 
     // Input dos dados da Carta 1
     printf("=== Cadastro da Carta 1 ===\n\n");
@@ -60,6 +61,8 @@ int main() {
     scanf("%d", &pontosTuristicos2);
 
     printf("\n");
+
+    printf("*** EXIBIÇÃO DOS DADOS ***\n\n");
 
     // Exibição dos dados da Carta 1
     printf("=== Carta 1 ===\n");
