@@ -3,7 +3,7 @@
 int main() {
     // Declaração de variáveis para Carta 1
     char estado1;
-    int codigo1;  // Variável para armazenar o número da carta
+    int codigo1;  // Variável para armazenar o número da cidade
     char nomeCidade1[50];
     int populacao1;
     float area1, pib1;
@@ -13,7 +13,7 @@ int main() {
 
     // Declaração de variáveis para Carta 2
     char estado2;
-    int codigo2;  // Variável para armazenar o número da carta
+    int codigo2;  // Variável para armazenar o número da cidade
     char nomeCidade2[50];
     int populacao2;
     float area2, pib2;
@@ -21,7 +21,7 @@ int main() {
     char codigoConcatenado2[5]; //codigo formatado para ser exibido ao usuário
     
 
-    // Leitura dos dados da Carta 1
+    // Input dos dados da Carta 1
     printf("=== Cadastro da Carta 1 ===\n\n");
     printf("Digite o Estado da Carta (escolha de A a H)\n");
     scanf(" %c", &estado1);
@@ -29,7 +29,7 @@ int main() {
     scanf("%d", &codigo1);  // Leitura do número do código
     sprintf(codigoConcatenado1, "%c%02d", estado1, codigo1);  // Concatena estado com número (ex: A01)
     printf("Nome da Cidade: ");
-    scanf(" %[^\n]s", nomeCidade1);
+    scanf(" %[^\n]s", nomeCidade1); //tratamento para ignorar espaços. Tornando possivel digitar nomes de cidades compostos
     printf("Populacao: ");
     scanf("%d", &populacao1);
     printf("Area (em km²): ");
@@ -41,15 +41,15 @@ int main() {
 
     printf("\n");
 
-    // Leitura dos dados da Carta 2
+    // Input dos dados da Carta 2
     printf("=== Cadastro da Carta 2 ===\n");
     printf("Digite o Estado da Carta (escolha de A a H)\n");
     scanf(" %c", &estado2);
     printf("Digite o Codigo da Carta (escolha de 1 a 4)\n");
-    scanf("%d", &codigo2);  // Leitura do número do código
+    scanf("%d", &codigo2);
     sprintf(codigoConcatenado2, "%c%02d", estado2, codigo2);  // Concatena estado com número (ex: B02)
     printf("Nome da Cidade: ");
-    scanf(" %[^\n]s", nomeCidade2);
+    scanf(" %[^\n]s", nomeCidade2); //tratamento para ignorar espaços. Tornando possivel digitar nomes de cidades compostos
     printf("Populacao: ");
     scanf("%d", &populacao2);
     printf("Area (em km²): ");
