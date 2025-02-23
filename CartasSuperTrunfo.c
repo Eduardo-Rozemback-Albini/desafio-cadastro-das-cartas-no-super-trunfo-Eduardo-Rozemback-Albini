@@ -31,7 +31,7 @@ int main() {
     sprintf(codigoConcatenado1, "%c%02d", estado1, codigo1);  // Concatena estado com número (ex: A01)
     printf("Nome da Cidade: ");
     scanf(" %[^\n]s", nomeCidade1); //tratamento para ignorar espaços. Tornando possivel digitar nomes de cidades compostos
-    printf("Populacao: ");
+    printf("Populacao (em milhares de habitantes): ");
     scanf("%d", &populacao1);
     printf("Area (em km²): ");
     scanf("%f", &area1);
@@ -51,7 +51,7 @@ int main() {
     sprintf(codigoConcatenado2, "%c%02d", estado2, codigo2);  // Concatena estado com número (ex: B02)
     printf("Nome da Cidade: ");
     scanf(" %[^\n]s", nomeCidade2); //tratamento para ignorar espaços. Tornando possivel digitar nomes de cidades compostos
-    printf("Populacao: ");
+    printf("Populacao (em milhares de habitantes): ");
     scanf("%d", &populacao2);
     printf("Area (em km²): ");
     scanf("%f", &area2);
@@ -60,12 +60,20 @@ int main() {
     printf("Numero de Pontos Turisticos: ");
     scanf("%d", &pontosTuristicos2);
 
+    double populacaoReal1 = populacao1 * 1000;  // Multiplica por 1.000;
+    double populacaoReal2 = populacao2 * 1000;  // Multiplica por 1.000;
 
-    float densidadePopulacional1 = populacao1 / area1;
-    float pibPerCapita1 = pib1 / populacao1;
+    // Convertendo para reais
+    double pibEmReais1 = pib1 * 1e9;
+    double pibEmReais2 = pib2 * 1e9;
 
-    float densidadePopulacional2 = populacao2 / area2;
-    float pibPerCapita2 = pib2 / populacao2;
+
+
+    float densidadePopulacional1 = populacaoReal1 / area1;
+    float pibPerCapita1 = pibEmReais1 / populacaoReal1;
+
+    float densidadePopulacional2 = populacaoReal2 / area2;
+    float pibPerCapita2 = pibEmReais2 / populacaoReal2;
 
     printf("\n");
 
