@@ -20,7 +20,7 @@ int main() {
     scanf("%d", &codigo1);
     sprintf(codigoConcatenado1, "%c%02d", estado1, codigo1);
     printf("Nome da Cidade: ");
-    scanf(" %[^\n]s", nomeCidade1);
+    scanf(" %49[^\n]s", nomeCidade1); //Usado %49 para limitar a leitura e evitar estouro de buffer.
     printf("Populacao (em milhares de habitantes): ");
     scanf("%lu", &populacao1);
     printf("Area (em km²): ");
@@ -40,7 +40,7 @@ int main() {
     scanf("%d", &codigo2);
     sprintf(codigoConcatenado2, "%c%02d", estado2, codigo2);
     printf("Nome da Cidade: ");
-    scanf(" %[^\n]s", nomeCidade2);
+    scanf(" %49[^\n]s", nomeCidade2); //Usado %49 para limitar a leitura e evitar estouro de buffer.
     printf("Populacao (em milhares de habitantes): ");
     scanf("%lu", &populacao2);
     printf("Area (em km²): ");
@@ -92,13 +92,14 @@ int main() {
 
     // Comparação das Cartas
     printf("\n*** COMPARAÇÃO DAS CARTAS ***\n");
-    printf("População: Carta %d venceu (1 = Carta 1, 0 = Carta 2)\n", populacaoReal1 > populacaoReal2);
+    printf("LEGENDA:\n(1 = Carta 1, 0 = Carta 2)\n");
+    printf("População: Carta %d venceu\n", populacaoReal1 > populacaoReal2);
     printf("Área: Carta %d venceu\n", area1 > area2);
     printf("PIB: Carta %d venceu\n", pibEmReais1 > pibEmReais2);
     printf("Pontos Turísticos: Carta %d venceu\n", pontosTuristicos1 > pontosTuristicos2);
-    printf("Densidade Populacional: Carta %d venceu (menor vence)\n", densidadePopulacional1 < densidadePopulacional2);
+    printf("Densidade Populacional: Carta %d venceu (menor vence)\n", densidadePopulacional1 < densidadePopulacional2); //utilização do operador Menor
     printf("PIB per Capita: Carta %d venceu\n", pibPerCapita1 > pibPerCapita2);
-    printf("Super Poder: Carta %d venceu\n", superPoderCarta1 > superPoderCarta2);
+    printf("Super Poder: Carta %d venceu\n\n\n", superPoderCarta1 > superPoderCarta2);
 
     return 0;
 }
