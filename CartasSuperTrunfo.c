@@ -88,7 +88,7 @@ int main() {
     printf("Pontos Turísticos: %d\n", pontosTuristicos2);
     printf("Densidade Populacional: %.2f hab/km²\n", densidadePopulacional2);
     printf("PIB per Capita: R$ %.2f\n", pibPerCapita2);
-    printf("Super Poder: %.2f\n", superPoderCarta2);
+    printf("Super Poder: %.2f\n\n", superPoderCarta2);
 
     //MENU INTERATIVO
     printf("### MENU ###\n");
@@ -99,7 +99,9 @@ int main() {
     printf("4. PONTOS TURISTICOS\n");
     printf("5. DENSIDADE POPULACIONAL\n");
     printf("6. PIB PER CAPITA\n");
-    printf("7. RESUMO DE TODOS OS ATRIBUTOS\n");
+    printf("7. SUPER PODER\n");
+    printf("8. RESUMO DE TODOS OS ATRIBUTOS\n");
+    printf("9. ENCERRAR PROGRAMA\n");
     printf("Escolha: \n");
 
     scanf("%d", &menuOpcaoEscolhida);
@@ -228,6 +230,26 @@ int main() {
         break;
 
     case 7:
+        //Comparação do Super Poder
+        if (superPoderCarta1 > superPoderCarta2) {
+            printf("Comparação de cartas (Atributo: Super Poder):\n\n");
+            printf("Carta 1 - %s: %.2f pontos\n", nomeCidade1, superPoderCarta1);
+            printf("Carta 2 - %s: %.2f pontos\n", nomeCidade2, superPoderCarta2);
+            printf("Resultado: Carta 1 (%s) venceu!\n\n", nomeCidade1);
+        } else if (superPoderCarta2 > superPoderCarta1) {
+            printf("Comparação de cartas (Atributo: Super Poder):\n\n");
+            printf("Carta 1 - %s: %.2f pontos\n", nomeCidade1, superPoderCarta1);
+            printf("Carta 2 - %s: %.2f pontos\n", nomeCidade2, superPoderCarta2);
+            printf("Resultado: Carta 2 (%s) venceu!\n\n", nomeCidade2);
+        } else {
+            printf("Comparação de cartas (Atributo: Super Poder):\n\n");
+            printf("Carta 1 - %s: %.2f pontos\n", nomeCidade1, superPoderCarta1);
+            printf("Carta 2 - %s: %.2f pontos\n", nomeCidade2, superPoderCarta2);
+            printf("Resultado: Empate!\n\n");
+        }
+        break;
+
+    case 8:
         //Resumo Todos os Atributos das Cartas
         printf("\n*** COMPARAÇÃO DAS CARTAS ***\n");
         printf("LEGENDA:\n(1 = Carta 1, 0 = Carta 2)\n");
@@ -239,26 +261,14 @@ int main() {
         printf("PIB per Capita: Carta %d venceu\n", pibPerCapita1 > pibPerCapita2);
         printf("Super Poder: Carta %d venceu\n\n\n", superPoderCarta1 > superPoderCarta2);
         break;
+
+    case 9:
+        //Encerra o programa
+        return 0;
     
     default:
         printf("### Opcao Invalida! ###\n");
         break;
     }
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-        
-
-    return 0;
 }
